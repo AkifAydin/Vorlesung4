@@ -222,7 +222,7 @@ public class Erzeugen {
         return newary;
     }
 
-        public static boolean
+        //public static boolean
 
     public static void main(String[] args) {
         //A1(5, 10);
@@ -278,5 +278,7 @@ public class Erzeugen {
         System.out.println(A20(arr6));
         System.out.println("Aufgabe.22");
         System.out.println(Arrays.toString(A22(arr7)));
+        //String str = args[0];
+        //System.out.println("str: " +str);
     }
 }

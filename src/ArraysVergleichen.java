@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Arrays;
 
 public class ArraysVergleichen {
@@ -26,5 +27,6 @@ public class ArraysVergleichen {
 
         //System.out.println(Arrays.compare(ary1, ary2)); //muss generischer Typ sein
         System.out.println(Arrays.compare(arys1, arys2));
+
     }
 }
