@@ -199,18 +199,30 @@ public class Erzeugen {
     }
 
     public static int[] A22(int[] ary) {
-        int[] newary = new int[ary.length];
-        for (int i = 0; i < ary.length; i++) {
-            for (int elem : ary) {
-                if (ary[i] == elem) {
+        List<Integer> newlist = new ArrayList<Integer>();
+        for (int i = ary.length - 1; i >= 0; i--) {
+            for (int y = ary.length - 1; y >= 0; y--) {
+                if (i == y) {
                     continue;
-                } else {
-
                 }
-            }
+                if (ary[i] == ary[y]) {
+                    break;
+                } else {
+                    if (y == 0) {
+                        newlist.add(ary[i]);
+                    }
+                }
+            }    //[1,6,7,9,10,11,12]
+            //System.out.println(ary[i]);
         }
+        int[] newary = new int[newlist.size()];
+        for (int z = 0; z < newlist.size(); z++) {
+            newary[z] = newlist.get(z);
+        }
+        return newary;
     }
 
+        public static boolean
 
     public static void main(String[] args) {
         //A1(5, 10);
@@ -251,7 +263,9 @@ public class Erzeugen {
         int[][] arr4 = {{1, 2, 3, 2, 1}, {1, 2, 3}, {0, 1, 2, 3, 5, 6}, {1, 2, 3}, {1, 2, 3, 2, 1}};
         int[][][] arr5 = {{{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, {10, 11, 12, 13, 14, 15, 16, 17, 18, 19}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}}};
         int[][] arr6 = {{3, 2, 1, 2, 3}, {2, 1, 2}, {1}, {2, 1, 2}, {3, 2, 1, 2, 3}};
-        int[] arr7 = {2, 1, 2, 3, 5, 6, 7, 8, 8, 9, 3, 10, 11, 12, 5}; //[1,3,6,7,9,10,11,12]
+        int[][][] arr8 = {{{3, 2, 1, 2, 3}, {2, 1, 2}, {1}, {2, 1, 2}, {3, 2, 1, 2, 3}}};
+        int[] arr7 = {2, 1, 2, 3, 5, 6, 7, 8, 8, 9, 3, 10, 11, 12, 5}; //[1,6,7,9,10,11,12]
+
         System.out.println("Aufgabe.16");
         System.out.println(A16(arr1, arr2));
         System.out.println("Aufgabe.17");
@@ -263,6 +277,6 @@ public class Erzeugen {
         System.out.println("Aufgabe.20");
         System.out.println(A20(arr6));
         System.out.println("Aufgabe.22");
-        System.out.println(A22(Arrays.toString(arr7)));
+        System.out.println(Arrays.toString(A22(arr7)));
     }
 }
